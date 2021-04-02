@@ -1,0 +1,64 @@
+/*
+*{
+    margin: 0;
+    padding: 0;
+}
+*/
+
+#title{
+    border: solid violet 3px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+#selection{
+    border: palegreen solid 3px;
+	/*display: flex;*/
+	/*flex-wrap: wrap; 
+    makes the elements inside wrap*/
+    display: flex;
+    height: 400px;
+}
+
+#pink-abstract-video{
+    position:fixed;
+    z-index: -5;
+    max-width: 100%;
+
+
+}
+
+.option{
+    border: salmon solid 3px;
+    padding: 20px 20px;
+    margin: auto auto;
+}
+.selectElement{
+    width: 140px;
+    font-family: 'Roboto', sans-serif;
+    background-color: DodgerBlue;
+    color: white;
+    padding: 8px 16px;
+    font-size:xx-large;
+}
+.numInputs{
+    border: black solid 3px;
+    width: 180px;
+    text-align: center;
+    margin: auto auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: xx-large;
+}
+
+/*the test stuff*/
+
+.testContent{
+    border: white solid 3px;
+    display: none;
+    position: absolute;
+}
+
+#testContainer{
+    position: relative;
+}

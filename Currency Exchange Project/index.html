@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Currency Exchange App</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <!--<script src="input-script.js"></script>  -- Killing the header script-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+</head>
+
+<body>
+    <!--our script might do better in the body-->
+    <script src="input-script.js"></script>
+
+    <video autoplay muted loop id="pink-abstract-video" src="engin-akyurt-pink-abstract.mp4" type="video/mp4"></video>
+    <div id="title"> 
+        <h1>Currency Exchange Rates</h1>
+    </div>
+
+    <!-- Here's the inputs and such. Organized (selection/inputbox1&2/opiton1&2 & numinput1&2) -->
+    <div id="selection">
+            <span id="option1" class="option">
+                <select name="dropDown1" id="dropDown1" class="selectElement" onchange="inputSide1()">
+                    <!--https://www.w3schools.com/howto/howto_js_filter_dropdown.asp-->
+                </select>
+                <input type="text" id="numInput1" class="numInputs" value=1 oninput=inputSide1()>
+            </span>
+            <span id="option2" class="option">
+                <select name="dropDown2" id="dropDown2" class="selectElement" onchange="inputSide1()"></select>
+                <input type="text" id="numInput2" class="numInputs" value=1 oninput="inputSide2()">
+            </span>
+    </div>
+    
+    <div id="testContainer">
+        <button onclick="testFunction()">DEBUG 1</button>
+        <div id="testDropDown" class="testContent">
+            <a href="">1</a>
+            <a href="">2</a>
+            <a href="">3</a>
+        </div>
+    </div>
+
+    <div id="flags">
+        <div id="flag1">
+
+        </div>
+        <div id="flag2">
+
+        </div>
+    </div>
+</body>
+</html>
