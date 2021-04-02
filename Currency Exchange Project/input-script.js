@@ -113,4 +113,5 @@ var flagJSON = $.getJSON("flag-object.json",
         
     }
 )
-// test note
+
+//Github ... i typed this on my desktop
