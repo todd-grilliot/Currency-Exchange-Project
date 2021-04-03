@@ -96,7 +96,7 @@ function textInput()
 //TEST BUTTON
 function testFunction(){
     console.log("TEST!!!");
-    //document.getElementById('testDropDown').classList.toggle('show');
+    document.getElementById('testDropDown').classList.toggle('show');
     console.log(document.getElementById('testDropDown').classList)
 }
 
