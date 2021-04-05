@@ -1,4 +1,3 @@
-
 var isFunOne = true;
 
 //ENDpoints and API Key for latest
@@ -93,13 +92,6 @@ function textInput()
 }
 //END TEXTINPUT FUNCTION
 
-//TEST BUTTON
-function testFunction(){
-    console.log("TEST!!!");
-    document.getElementById('testDropDown').classList.toggle('show');
-    console.log(document.getElementById('testDropDown').classList)
-}
-
 //JSON stuff
 // we are going to need two tags for the countries, currency tags, and flag tags.
 // we are going to need the pictures as well.
@@ -117,3 +109,14 @@ var flagJSON = $.getJSON("flag-object.json",
 //Github ... i typed this on my desktop
 
 //typed this on my laptop
+
+function populateInfo(){
+    console.log("populateInfo!")
+    const curTitle1 = document.createElement('a');
+    const curTitle2 = document.createElement('a');
+    const flagJPG1 = document.createElement('a'); // << should be an img
+    const flagJPG2 = document.createElement('a');
+
+    //run another xhl request and get the data for these variables
+    //put the data in the place where it goes.
+}

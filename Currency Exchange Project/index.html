@@ -24,26 +24,22 @@
     </div>
 
     <!-- Here's the inputs and such. Organized (selection/inputbox1&2/opiton1&2 & numinput1&2) -->
+        <!--https://www.w3schools.com/howto/howto_js_filter_dropdown.asp-->
     <div id="selection">
-            <span id="option1" class="option">
-                <select name="dropDown1" id="dropDown1" class="selectElement" onchange="inputSide1()">
-                    <!--https://www.w3schools.com/howto/howto_js_filter_dropdown.asp-->
+            <span id="option1" class="option">      
+                <select name="dropDown1" id="dropDown1" class="selectElement" onchange="inputSide1();populateInfo()">
                 </select>
                 <input type="text" id="numInput1" class="numInputs" value=1 oninput=inputSide1()>
             </span>
             <span id="option2" class="option">
-                <select name="dropDown2" id="dropDown2" class="selectElement" onchange="inputSide1()"></select>
+                <select name="dropDown2" id="dropDown2" class="selectElement" onchange="inputSide1();populateInfo()"></select>
                 <input type="text" id="numInput2" class="numInputs" value=1 oninput="inputSide2()">
             </span>
     </div>
-    
-    <div id="testContainer">
-        <button id="testButton" onclick="testFunction()">DEBUG 1</button>
-        <div id="testDropDown" class="testContent">
-            <a href="">1</a>
-            <a href="">2</a>
-            <a href="">3</a>
-        </div>
+    <div id="infoContainer">
+        <span id="info1" class="info">
+            id= info1, class = info
+        </span>
     </div>
 
     <div id="flags">
