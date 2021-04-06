@@ -1,7 +1,7 @@
 var isFunOne = true;
 
 //ENDpoints and API Key for latest
-var latestURL = "http://data.fixer.io/api/latest?access_key=4f8b69ba7fbf96653323a90afd77bde4&base=EUR";
+var latestURL = "https://data.fixer.io/api/latest?access_key=4f8b69ba7fbf96653323a90afd77bde4&base=EUR";
 //DECLARE xhrLatest as a new request + xhrConvert
 var xhrLatest = new XMLHttpRequest();
 var xhrConvert = new XMLHttpRequest();
