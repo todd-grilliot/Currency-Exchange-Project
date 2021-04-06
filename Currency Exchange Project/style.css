@@ -6,30 +6,30 @@
 */
 
 #title{
-    border: solid violet 3px;
     text-align: center;
     font-family: 'Roboto', sans-serif;
     color: white;
+    font-size: xx-large;
 }
 
 #selection{
-    border: palegreen solid 3px;
     display: flex;
-    height: 400px;
+    height: 300px;
 }
 
 #pink-abstract-video{
-    position:fixed;
+    position: fixed;
     z-index: -5;
-    max-width: 100%;
-
+    top: 0px;
+    right: 0px;
+    max-height: 120%;
+    min-width: 20%;
 
 }
 
 .option{
-    border: salmon solid 3px;
     padding: 20px 20px;
-    margin: auto auto;
+    margin: 0 auto;
 }
 .selectElement{
     width: 140px;
@@ -39,21 +39,40 @@
     padding: 8px 16px;
     font-size:xx-large;
 }
+.selectElement option{
+    background-color: black;
+}
 .numInputs{
     background-color: transparent;
     color: white;
     border: transparent solid 3px;
     width: 180px;
     text-align: center;
-    margin: auto auto;
+    margin: 60% auto;
     font-family: 'Roboto', sans-serif;
     font-size: xx-large;
 }
 
 #infoContainer{
     display:flex;
+    height: 300px;
 }
 .info{
     color: white;
-    margin: auto;
+    height: 100px;
+    width: 376px;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+
+}
+.curTitle{
+    display: inline-flex;
+    top: 40px;
+    padding: 22px 0;
+    
+}
+.flagPNG{
+    padding: 0px 0 0px 20px;
+    display: inline;
+    vertical-align: bottom;
 }

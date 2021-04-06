@@ -15,7 +15,7 @@ xhrLatest.onreadystatechange = function ()
 {
    if (xhrLatest.readyState === 4) 
    {
-        //console.log('xhrLatest readystate === 4');
+
 
         //get two elements for me, the drop down box boys
         const menu1 = document.getElementById('dropDown1');
@@ -23,8 +23,6 @@ xhrLatest.onreadystatechange = function ()
 
         //turn our "response" JSON into an object called "selectData"
         var selectData = JSON.parse(xhrLatest.response);
-
-            console.log(selectData.rates);
 
         // for each selectData.rates property (the names of the currencies) - creating options in the selections
         for (x in selectData.rates)
@@ -38,6 +36,7 @@ xhrLatest.onreadystatechange = function ()
             menu1.appendChild(rateName1);
             menu2.appendChild(rateName2);
         }
+        populateInfo();
     }
 };
 xhrLatest.send();
@@ -97,26 +96,36 @@ function textInput()
 // we are going to need the pictures as well.
 // https://en.wikipedia.org/wiki/List_of_circulating_currencies
 
-var flagJSON = $.getJSON("flag-object.json",
-    function (flagData) {
-        console.log(flagData.USD.Name);
-        console.log(flagData.EUR.PNG);
-        console.log(flagData.ALL.Name);
-        
-    }
-)
-
-//Github ... i typed this on my desktop
-
-//typed this on my laptop
-
 function populateInfo(){
-    console.log("populateInfo!")
-    const curTitle1 = document.createElement('a');
-    const curTitle2 = document.createElement('a');
-    const flagJPG1 = document.createElement('a'); // << should be an img
-    const flagJPG2 = document.createElement('a');
+    console.log("populateInfo!");
+    const curName1 = document.getElementById('dropDown1').value;
+    const curName2 = document.getElementById('dropDown2').value;
 
+    const curTitle1 = document.getElementById('title1');
+    const curTitle2 = document.getElementById('title2');
+    const flagPNG1 = document.getElementById('flagPNG1');
+    const flagPNG2 = document.getElementById('flagPNG2');
+
+
+
+
+    $.getJSON("flag-object.json",
+        function (data) {
+            console.log(data[curName1].Name)
+            console.log(data[curName2].Name)
+            console.log(data[curName1].PNG)
+            console.log(data[curName2].PNG)
+
+            //curTitle1.value = data[curName1].Name
+            //curTitle1.setAttribute('value', data[curName1].Name)
+            curTitle1.innerHTML = data[curName1].Name
+            curTitle2.innerHTML = data[curName2].Name
+            flagPNG1.src = data[curName1].PNG
+            flagPNG2.src = data[curName2].PNG
+            
+            
+        }
+    );
     //run another xhl request and get the data for these variables
     //put the data in the place where it goes.
 }
