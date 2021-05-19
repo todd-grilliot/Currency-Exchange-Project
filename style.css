@@ -18,12 +18,11 @@
 }
 
 #pink-abstract-video{
-    position: fixed;
+    position: absolute;
     z-index: -5;
     top: 0px;
     right: 0px;
-    max-height: 120%;
-    min-width: 20%;
+    max-width: 120%;
 
 }
 
