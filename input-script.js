@@ -1,7 +1,10 @@
 var isFunOne = true;
 
 //ENDpoints and API Key for latest
-var latestURL = "http://data.fixer.io/api/latest?access_key=4f8b69ba7fbf96653323a90afd77bde4&base=EUR";
+//var latestURL = "http://data.fixer.io/api/latest?access_key=4f8b69ba7fbf96653323a90afd77bde4&base=EUR";
+var latestURL = "https://api.jsonbin.io/v3/b/61f9bccf1960493ad18676c3";
+//^^^ static json held at jsonkeeper.com - replacing the actual api which was not secure
+
 //DECLARE xhrLatest as a new request + xhrConvert
 var xhrLatest = new XMLHttpRequest();
 var xhrConvert = new XMLHttpRequest();
@@ -12,13 +15,13 @@ var starting = true;
 //open the request
 xhrLatest.open("GET", latestURL);
 //not sure what the request header does. But we set is gosh dang it.
-xhrLatest.setRequestHeader("Accept", "application/json");
+//xhrLatest.setRequestHeader("Accept", "application/json");
+xhrLatest.setRequestHeader("X-Master-Key", "$2b$10$K1oMrwDoitLEDayHe5qUTuruY5kOu7bGpN3ZKs8xJ3X83.gzOtguK");
 //START REQUEST FUNCTION (Checking to see if the request has finished "readystate 4")
 xhrLatest.onreadystatechange = function () 
 {
    if (xhrLatest.readyState === 4) 
    {
-
 
         //get two elements for me, the drop down box boys
         const menu1 = document.getElementById('dropDown1');
@@ -28,7 +31,7 @@ xhrLatest.onreadystatechange = function ()
         var selectData = JSON.parse(xhrLatest.response);
 
         // for each selectData.rates property (the names of the currencies) - creating options in the selections
-        for (x in selectData.rates)
+        for (x in selectData.record.rates)
         {
             const rateName1 = document.createElement('option');
             const rateName2 = document.createElement('option');
@@ -73,16 +76,18 @@ function textInput()
     var curName2 = document.getElementById('dropDown2').value;
 
     xhrConvert.open('GET', latestURL);
-    xhrConvert.setRequestHeader("Accept", "application/json");
+    //xhrConvert.setRequestHeader("Accept", "application/json");
+    xhrConvert.setRequestHeader("X-Master-Key", "$2b$10$K1oMrwDoitLEDayHe5qUTuruY5kOu7bGpN3ZKs8xJ3X83.gzOtguK");
     xhrConvert.onreadystatechange = function()
     {
         if(xhrConvert.readyState === 4)
         {
+
             var convertData = JSON.parse(xhrConvert.response);
             var numInputBox1 = document.getElementById('numInput1');
             var numInputBox2 = document.getElementById('numInput2');
-            var answerForTwo = convertData.rates[curName2] / convertData.rates[curName1] * num1;
-            var answerForOne = convertData.rates[curName1] / convertData.rates[curName2] * num2;
+            var answerForTwo = convertData.record.rates[curName2] / convertData.record.rates[curName1] * num1;
+            var answerForOne = convertData.record.rates[curName1] / convertData.record.rates[curName2] * num2;
             
             if (isFunOne){
                 numInputBox2.value = answerForTwo.toFixed(2);}
