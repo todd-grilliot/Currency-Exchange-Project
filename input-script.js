@@ -124,7 +124,7 @@ function populateInfo(){
 
 
 
-    $.getJSON("flag-object.json",
+    $.getJSON("./flag-object.json",
         function (data) {
             console.log(data[curName1].Name)
             console.log(data[curName2].Name)
