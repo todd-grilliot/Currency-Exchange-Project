@@ -16,44 +16,47 @@
 
 <body>
     <!--our script might do better in the body-->
-    <script src="input-script.js"></script>
+    <script src="./input-script.js"></script>
 
     <video autoplay muted loop id="pink-abstract-video" src="engin-akyurt-pink-abstract.mp4" type="video/mp4"></video>
-    <div id="title"> 
-        <p>Currency Exchange Rates</p>
-    </div>
 
-    <!-- Here's the inputs and such. Organized (selection/inputbox1&2/opiton1&2 & numinput1&2) -->
-        <!--https://www.w3schools.com/howto/howto_js_filter_dropdown.asp-->
-    <div id="selection">
-            <span id="option1" class="option">      
-                <select name="dropDown1" id="dropDown1" class="selectElement" onchange="inputSide1();populateInfo()">
-                </select>
-                <input type="text" id="numInput1" class="numInputs" value=1 oninput=inputSide1()>
-            </span>
-            <span id="option2" class="option">
-                <select name="dropDown2" id="dropDown2" class="selectElement" onchange="inputSide1();populateInfo()"></select>
-                <input type="text" id="numInput2" class="numInputs" value=1 oninput="inputSide2()">
-            </span>
-    </div>
-    <div id="infoContainer">
-        <span id="info1" class="info">
-            <img src="" alt="" id="flagPNG1" class="flagPNG">
-            <a id="title1" class="curTitle"></a>
-        </span>
-        <span id="info2" class="info">        
-            <img src="" alt="" id="flagPNG2" class="flagPNG">
-            <span id="title2" class ="curTitle"></span>
-        </span>
-    </div>
-
-    <div id="flags">
-        <div id="flag1">
-
+    <!-- <div class="root-container"> -->
+        <div id="title"> 
+            <p>Currency Exchange Rates</p>
         </div>
-        <div id="flag2">
 
+        <!-- Here's the inputs and such. Organized (selection/inputbox1&2/opiton1&2 & numinput1&2) -->
+            <!--https://www.w3schools.com/howto/howto_js_filter_dropdown.asp-->
+        <div id="selection">
+                <span id="option1" class="option">      
+                    <select name="dropDown1" id="dropDown1" class="selectElement" onchange="inputSide1();populateInfo()">
+                    </select>
+                    <input type="text" id="numInput1" class="numInputs" value=1 oninput=inputSide1()>
+                </span>
+                <span id="option2" class="option">
+                    <select name="dropDown2" id="dropDown2" class="selectElement" onchange="inputSide1();populateInfo()"></select>
+                    <input type="text" id="numInput2" class="numInputs" value=1 oninput="inputSide2()">
+                </span>
         </div>
-    </div>
+        <div id="infoContainer">
+            <span id="info1" class="info">
+                <img src="" alt="" id="flagPNG1" class="flagPNG">
+                <a id="title1" class="curTitle"></a>
+            </span>
+            <span id="info2" class="info">        
+                <img src="" alt="" id="flagPNG2" class="flagPNG">
+                <a id="title2" class ="curTitle"></span>
+            </span>
+        </div>
+
+        <div id="flags">
+            <div id="flag1">
+
+            </div>
+            <div id="flag2">
+
+            </div>
+        </div>
+    <!-- </div> -->
 </body>
 </html>

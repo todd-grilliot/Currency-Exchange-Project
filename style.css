@@ -9,7 +9,7 @@
     text-align: center;
     font-family: 'Roboto', sans-serif;
     color: white;
-    font-size: xx-large;
+    font-size: 6vw;
 }
 
 #selection{
@@ -58,6 +58,7 @@
 }
 .info{
     color: white;
+    align-items: center;
     height: 100px;
     width: 376px;
     margin: 0 auto;
@@ -71,7 +72,61 @@
     
 }
 .flagPNG{
-    padding: 0px 0 0px 20px;
+    padding: 20px;
     display: inline;
     vertical-align: bottom;
 }
+
+ @media only screen and (max-width: 1000px) {
+    #pink-abstract-video{
+        position: fixed;
+        object-fit: cover;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+    }
+    .option{
+        padding: 0;
+    }
+    .numInputs{
+    width: 100%;
+    text-align: center;
+    margin: 20px auto;
+    }
+    #selection{
+        height: auto;
+    }
+    .selectElement{
+        width: 100%;
+    }
+    #title{
+        font-size: 8vw;
+        margin-bottom: 40px;
+    }
+    .info{
+        display: inline;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    #infoContainer{
+        align-items: center;
+        text-align: center;
+    }
+    .flagPNG{
+        height: 40px;
+        padding: 20px;
+        margin: auto;
+        display: block;
+
+    }
+    .curTitle{
+
+        text-align: center;
+        margin: auto;
+        
+    }
+} 

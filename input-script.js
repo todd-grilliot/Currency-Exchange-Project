@@ -5,6 +5,9 @@ var latestURL = "http://data.fixer.io/api/latest?access_key=4f8b69ba7fbf96653323
 //DECLARE xhrLatest as a new request + xhrConvert
 var xhrLatest = new XMLHttpRequest();
 var xhrConvert = new XMLHttpRequest();
+var starting = true;
+
+//gonna change the starting values to something more useful, like usd to euro
 
 //open the request
 xhrLatest.open("GET", latestURL);
@@ -98,8 +101,20 @@ function textInput()
 
 function populateInfo(){
     console.log("populateInfo!");
+    
+    if(starting){
+        console.log('this is the first populate...');
+        document.getElementById('dropDown1').value = 'USD';
+        document.getElementById('dropDown2').value = 'EUR';
+        textInput();
+        starting = false;
+    }
+
+
     const curName1 = document.getElementById('dropDown1').value;
     const curName2 = document.getElementById('dropDown2').value;
+    console.log(curName1);
+
 
     const curTitle1 = document.getElementById('title1');
     const curTitle2 = document.getElementById('title2');
@@ -129,3 +144,4 @@ function populateInfo(){
     //run another xhl request and get the data for these variables
     //put the data in the place where it goes.
 }
+
