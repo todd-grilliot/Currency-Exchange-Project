@@ -8,6 +8,7 @@ var latestURL = "https://api.jsonbin.io/v3/b/61f9bccf1960493ad18676c3";
 //DECLARE xhrLatest as a new request + xhrConvert
 var xhrLatest = new XMLHttpRequest();
 var xhrConvert = new XMLHttpRequest();
+var xhrJSON = new XMLHttpRequest();
 var starting = true;
 
 //gonna change the starting values to something more useful, like usd to euro
@@ -129,8 +130,32 @@ function populateInfo(){
 
 
 
-    $.getJSON("./flag-object.json",
-        function (data) {
+    // $.getJSON("./flag-object.json",
+    //     function (data) {
+    //         console.log(data[curName1].Name)
+    //         console.log(data[curName2].Name)
+    //         console.log(data[curName1].PNG)
+    //         console.log(data[curName2].PNG)
+
+    //         //curTitle1.value = data[curName1].Name
+    //         //curTitle1.setAttribute('value', data[curName1].Name)
+    //         curTitle1.innerHTML = data[curName1].Name
+    //         curTitle2.innerHTML = data[curName2].Name
+    //         flagPNG1.src = data[curName1].PNG
+    //         flagPNG2.src = data[curName2].PNG
+            
+            
+    //     }
+    // );
+
+    xhrJSON.open('GET', "./flag-object.json");
+    //xhrConvert.setRequestHeader("Accept", "application/json");
+   //xhrJSON.setRequestHeader("X-Master-Key", "$2b$10$K1oMrwDoitLEDayHe5qUTuruY5kOu7bGpN3ZKs8xJ3X83.gzOtguK");
+    xhrJSON.onreadystatechange = function()
+    {
+        if(xhrJSON.readyState === 4)
+        {
+            var data = JSON.parse(xhrJSON.response);
             console.log(data[curName1].Name)
             console.log(data[curName2].Name)
             console.log(data[curName1].PNG)
@@ -142,10 +167,9 @@ function populateInfo(){
             curTitle2.innerHTML = data[curName2].Name
             flagPNG1.src = data[curName1].PNG
             flagPNG2.src = data[curName2].PNG
-            
-            
         }
-    );
+    }
+    xhrJSON.send();
     //run another xhl request and get the data for these variables
     //put the data in the place where it goes.
 }
